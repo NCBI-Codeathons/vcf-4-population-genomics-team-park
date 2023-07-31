@@ -2,7 +2,7 @@
 
 List of participants and affiliations:
 - Participant, Affiliation (Team Leader)
-- Participant, Affiliation
+- Nick Carter, Harvard University
 
 ## Project Goals
 
