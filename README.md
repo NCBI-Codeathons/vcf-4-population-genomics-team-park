@@ -2,10 +2,10 @@
 
 List of participants and affiliations:
 - Daniel Park, Broad Institute (Team Leader)
-- Yixing Han, NIH/NHGRI
-- Nick Carter, Harvard University 
+- Nick Carter, Harvard University (Tech Lead)
+- Yixing Han, NIH/NHGRI (Writer)
 - Maria Burgos-Garay, CDC
-- Devesh
+- Devesh,
 
 
 ## Project Goals
