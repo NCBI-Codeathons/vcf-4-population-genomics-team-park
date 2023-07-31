@@ -3,6 +3,7 @@
 List of participants and affiliations:
 - Participant, Affiliation (Team Leader)
 - Nick Carter, Harvard University
+- Yixing Han, NIH/NHGRI
 
 ## Project Goals
 
