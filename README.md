@@ -1,12 +1,11 @@
 # Team Project Name
 
 List of participants and affiliations:
-- Participant, Affiliation (Team Leader)
-- Nick Carter, Harvard University
-- Daniel Park, Broad Institute
-- Yixing Han, NIH/NHGRI
-- Maria Burgos-Garay,
-- Devesh
+- Daniel Park, Broad Institute (Team Leader)
+- Nick Carter, Harvard University (Tech Lead)
+- Yixing Han, NIH/NHGRI (Writer)
+- Maria Burgos-Garay, CDC
+- Devesh, Univ of Birmingham
 
 ## Project Goals
 
