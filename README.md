@@ -5,7 +5,7 @@ List of participants and affiliations:
 - Nick Carter, Harvard University (Tech Lead)
 - Yixing Han, NIH/NHGRI (Writer)
 - Maria Burgos-Garay, CDC
-- Devesh,
+- Devesh, University of Birmingham
 
 
 ## Project Goals
