@@ -9,7 +9,9 @@ List of participants and affiliations:
 
 
 ## Project Goals
-Work on a solution landscape of how the community is working on VCF files on various questions. Probably identify the gaps of developing more solutions to meet emerging challenges.
+Given several ongoing projects for improved technical solutions under consideration to replace VCF, our group’s goal is to define a minimum set of bioinformatic tools that any solution must implement to simplify adoption in VCF-centric analysis pipelines. Our output will be a set of recommendations for those who are working on serialized data formats that improve upon VCF for storing, indexing, and searching population genetic data at large scale.
+
+Our goals do not include: evaluating or selecting a preferred technical solution, or to implement any of these recommended changes ourselves. 
 
 ## Approach
 Create tech solutions and implement converters for the community to use for different purposes by checking how the existing pipelines are using the VCF files in the pipelines. Starting with the list of pipelines in https://docs.google.com/spreadsheets/d/1_A7Ht8LQJZLRTVfp81fmULNarqdqC8ra6xK6yH-oj9E/edit#gid=0.
