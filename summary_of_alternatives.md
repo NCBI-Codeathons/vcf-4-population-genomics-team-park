@@ -54,6 +54,27 @@ It is a scalable WGS data storage tool. It can be used to store variant data lik
 ### Analysis:
 Again, like Hail, it is just a format to store the variant data, and use it for efficient downstream analysis. It is not a separate file format, although it provides the advantage of merging multiple VCF files and can be used at a population level genomic analysis.
 
+## GDS
+### Overview:
+This is a R/Bioconductor based tool, was mainly built to optimise large scale GWAS in R. It stores the Part of a project named CoreArray, having functions such as gdsfmt for efficient memory and file management, SNPRelate for GWAS SNP calculations on multicore systems. SNPRelate can also can be used for Plink, sequencevcf, netcdf, other data types with package to reconvert. The file is created in a .gds format. The .gds files contains genetic covariance and IBD (Identical by descent) coefficient split into non-overlapping parts and allocated to multicore system. The genome wide distribution of SNP effects attributed to allelic dosages and sample SNP eigenvectors, which helps to calculate substantial relatedness. The IBD estimation done by method of moment(mom) or maximum liklehood estimate(MLE).
 
+There are 4 genotypes assigned for each byte, leading to faster computation and parallelization wherein 4 genotypes are being studied at once. Data blocking also helps so that only subset of data can be selected for processing, efficient access of large dataset. The genotypes are loaded block by block, limited by the size of main memory.
+
+### Analysis:
+This is a very efficient format which can help compress data with the help of calculating the covaraiance matrix of the SNP, and indexing these covaraints for saving memory.
+
+## Tachylon
+### Overview:
+Open source C++ tool for calling variant data and writing, manipulating over it. It is also used for storing the SNP data in .yon format. It can be used for fast analysis on population level genomics data. This format stores data that optimises query execution, just like .cram does for .sam/.bam files. It can be downloaded in Linux using c library htslib as prerequisite, along with openssl, zstd for compression. While compressing, we need to set the block size of no. of variants/ no. of base pairs. It also uses encryption key using AES-256 to protect sensitive information. And just like Bcftools, it can be used to read/mutate the variant data file, alongwith the annotation of the metadata file.
+
+### Analysis:
+Its main function is that it helps in storage of population genomic level data, since it saves a lot of memory by storing variant data in columnar format i.e. stores necessary variant data in columns, while compressing the metadata to achieve more efficient storage of data with increase in sample size. Also, its encryption function can help protect the data.
+
+## BGEN
+### Overview:
+It is a file format denoting the binary format of the genetic (.gen) file system. It also has the ability to impute data, store unphased genotype and phased haplotype data. It converts the data into small file size, through efficient bit representation and compression. The BGEN tool is written in C++, which can be used for .bgen format support in other softwares. BGEN saves memory by storing the allelic probabilities per sample, in a 3D array format. These probabilities are indexed according to each variant in the row, and the sample id and the ploidy for each sample at each variant. Unused genotype probability with no variants are marked as NA’s. Many .bgen files can also be concatenated using the cat-bgen function, and edited using edit-bgen. 
+
+### Analysis:
+This format helps to save a lot of memory by this method, but the support for more complex conditions are still under development and will not be compatible with this format.
 
 
