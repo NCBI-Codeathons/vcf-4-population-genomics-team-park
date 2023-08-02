@@ -39,3 +39,21 @@ The second technique reduces the amount of space taken up by cells with identica
 Because decompressing a row of data generally requires information from some of the rows above it, this format seems best-suited to applications that either want to process an entire variant data file at a times or to extract individual columns (samples) of data.  This file format does not seem to include any index for the data records, making access to an individual row of data slow.  Because of this, replicating the functionality of VCF-reading libraries on spVCF might be challenging.
 
 It does deliver better file compression than many of its competitors, generally reducing file size by 14-15x, so might be a good format for archival storage of variant data if the loss of QC information is acceptable.  (I.e., store data in spVCF format when not being accessed and convert individual data files to some more easily used format before doing analysis on them.)
+
+## Hail
+### Overview:
+It is an open source library that analyses tabular and matrix data variable of the GWAS dataset, with the ability to query and manipulate specific sections of the data. This is a Python tool, with the installation requiring Java, C++, Python 3.8 libraries preinstalled. This tool requires a VCF file for importing the data in the Hail MatrixTable format in the python environment, making it easier to run downstream analysis in python. The row field is used for storing the gene information alongwith information of the structural variants in the array format while the column field is for storing the phenotypic and metadata information. The expression data are present in the cells. The GWAS analysis can be performed using statistical tools such as Matplotlib, Pandas and the linear regression function wherein the covariates can be annotated with respect to the phenotypes. We can even cluster for genotypes in the samples using PCA. It can compute the read depth per variant per sample. Also, it has a built-in wrapper for variant effect predictor.
+
+### Analysis:
+Hail is pretty much a scalable genomic analysis tool instead of a vcf replacement, its advantages are that it offers fast variant calling analysis using this tool and the matrixtable is also accessible for performing further analysis. It runs on python environment. But it still requires vcf input, thereby defeating the purpose of being an alternative to vcf file format.
+
+## GenomicsDB
+### Overview:
+It is a scalable WGS data storage tool. It can be used to store variant data like an array and the data can be queried and manipulated. It is written in C++ format and can be run on Linux shell. It is packages into GATK4 workflow and one if its key features is that it can merge gVCF files for joint genotyping. GenomicsDB uses a storage system for optimized storing/querying of sparse arrays, thus saving lots of space in the memory. Or else, it can also be used to perform genotypic analysis using multisample file or genomic databases workspace simultaneously using CombineGVCFs, with the caveat being that the combined files being made with CombineGVCFs function. Other programs might not give accurate results.
+
+### Analysis:
+Again, like Hail, it is just a format to store the variant data, and use it for efficient downstream analysis. It is not a separate file format, although it provides the advantage of merging multiple VCF files and can be used at a population level genomic analysis.
+
+
+
+
