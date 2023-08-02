@@ -77,4 +77,18 @@ It is a file format denoting the binary format of the genetic (.gen) file system
 ### Analysis:
 This format helps to save a lot of memory by this method, but the support for more complex conditions are still under development and will not be compatible with this format.
 
+## Genotype Query Tools (GQT)
+### Overview:
+GQT lies somewhere between an alternate file format for variant data and an application that uses variant data.  It's goal is to provide efficient extraction of an individual's variant data and comparison of variant data between individuals or groups of individuals.  The target application is disease/medical research, for example trying to understand what variations from the reference genome are associated with individuals who exhibit certain symptoms or respond in a particular way to medication.
 
+GQT first transposes the array of information in a VCF file to create an array with one row per individual sampled and one column per location of variation.  It then sorts the columns of the transposed array by number of individuals who vary at that position and then converts each cell of the resulting matrix to four bits of data that show the nucleotide the individual has at that position.  The result is a very sparse array with long stretches of zeroes that compresses very well.  They also have a technique to add indices to their compressed data that make it easy to extract all of the individuals that have a particular attribute.
+
+### Analysis:
+GQT discards so much information that it is not a viable replacement for VCF.  It is more of an intermediate format that VCF data can be transformed into to support particular types of queries.  The tools that the authors provide to manipulate GQT files rely on htslib to read input VCF files, so an htslib-compatible library to access a new variant data file format would make it easy to port the GQT tools to support the new file format.
+
+## Zarr:
+
+## Overview:
+Zarr is a more-generic data representation/format that has been adapted to handle variant data.  Zarr natively supports large N-dimenniosal arrays, with chunking and compression to reduce size and move array data to/from disk.  Scikit-allel and sgkit support storing variant data in Zarr, with each field in the VCF file represented as a separate Zarr array.  Storing variant data in Zarr seems to reduce file size by about 50% compared to BCF/VCF.  One advantage of Zarr over many of its competitors is that supports analysis of both rows (variance at a given position) and columns (individual data) well.
+### Analysis:
+A system based on Zarr seems like it would have potential as a replacement for VCF.  One potential disadvantage is that the Zarr representation creates a complex file structure for each set of variant data that would have to be transmitted as a tarfile, Zip archive, or similar object to make moving variant data from location to location practical.  Because the Zarr format is so different from VCF, writing work-alike libraries to some of the ones that process VCF files seems like the best way to drive adoption of this format.
