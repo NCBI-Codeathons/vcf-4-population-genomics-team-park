@@ -38,6 +38,7 @@
    - [IGV](https://software.broadinstitute.org/software/igv/)
    - [3DVizSNP](https://analysistools.cancer.gov/3dvizsnp/about)
    - [Geneious](https://www.geneious.com/)
+   - [UCSC Genome Browser](https://genome.ucsc.edu/goldenPath/help/vcf.html)
  - [GEMINI](https://gemini.readthedocs.io/en/latest/)
    - GEMINI is a flexible and powerful CLI tool set that allows querying and analysis of VCF files for genetic variation data, including annotations and population frequencies.
  - [PLINK](https://www.cog-genomics.org/plink/2.0/) (GWAS)
