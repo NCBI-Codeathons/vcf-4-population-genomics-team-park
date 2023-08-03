@@ -1,11 +1,11 @@
-# Team Project Name
+# Preparing for a new VCF standard
 
 List of participants and affiliations:
 - Daniel Park, Broad Institute (Team Leader)
 - Nick Carter, Harvard University (Tech Lead)
 - Yixing Han, NIH/NHGRI (Writer)
 - Maria Burgos-Garay, CDC
-- Devesh, University of Birmingham
+- Devesh Haseja, University of Birmingham
 
 
 ## Project Goals
