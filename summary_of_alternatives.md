@@ -28,6 +28,8 @@ One note is that SVCR seems much more optimized for row-wise access (comparing h
 Like SVCR, Sparse Allele Vectors (SAV) reduce the size of variant data by using a sparse representation that only contains data for samples that vary at a given position.  It is a direct extension of the BCF variant of VCF files that adds a sparse row representation to the file format.  It also supports positional Burrows-Wheeler transform and Zstandard compression to further reduce file size.  Their paper reports similar file size reduction to SVCR.
 ### Analysis:
 Conceptually, SAV is a direct extension to BCF, but the file formats appear fairly different.  SAV uses different compression algorithms than BCF, and uses a sort-tile-recursive r-tree to index the data file in order to reduce the time required to access random rows of data.  Thus, there would be little or no ability to re-use BCF parsers for SAV files.  However, the similar organization of the data suggests that implementing an SAV-compatible library that provided the same functionality as a VCF-parsing library might be relatively easy.  Again, as this is a sparse format, operations on rows of data are likely to be easier than operations on columns.
+### URL:
+[https://doi.org/10.1093/bioinformatics/btab378](https://doi.org/10.1093/bioinformatics/btab378)
 
 ## Sparse Project VCF
 ### Overview:
@@ -39,7 +41,8 @@ The second technique reduces the amount of space taken up by cells with identica
 Because decompressing a row of data generally requires information from some of the rows above it, this format seems best-suited to applications that either want to process an entire variant data file at a times or to extract individual columns (samples) of data.  This file format does not seem to include any index for the data records, making access to an individual row of data slow.  Because of this, replicating the functionality of VCF-reading libraries on spVCF might be challenging.
 
 It does deliver better file compression than many of its competitors, generally reducing file size by 14-15x, so might be a good format for archival storage of variant data if the loss of QC information is acceptable.  (I.e., store data in spVCF format when not being accessed and convert individual data files to some more easily used format before doing analysis on them.)
-
+### URL:
+[https://doi.org/10.1093/bioinformatics/btaa1004](https://doi.org/10.1093/bioinformatics/btaa1004)
 ## Hail
 ### Overview:
 It is an open source library that analyses tabular and matrix data variable of the GWAS dataset, with the ability to query and manipulate specific sections of the data. This is a Python tool, with the installation requiring Java, C++, Python 3.8 libraries preinstalled. This tool requires a VCF file for importing the data in the Hail MatrixTable format in the python environment, making it easier to run downstream analysis in python. The row field is used for storing the gene information along with information of the structural variants in the array format while the column field is for storing the phenotypic and metadata information. The expression data are present in the cells. The GWAS analysis can be performed using statistical tools such as Matplotlib, Pandas and the linear regression function wherein the covariates can be annotated with respect to the phenotypes. We can even cluster for genotypes in the samples using PCA. It can compute the read depth per variant per sample. Also, it has a built-in wrapper for variant effect predictor.
