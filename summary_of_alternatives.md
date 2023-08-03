@@ -92,3 +92,23 @@ GQT discards so much information that it is not a viable replacement for VCF.  I
 Zarr is a more-generic data representation/format that has been adapted to handle variant data.  Zarr natively supports large N-dimenniosal arrays, with chunking and compression to reduce size and move array data to/from disk.  Scikit-allel and sgkit support storing variant data in Zarr, with each field in the VCF file represented as a separate Zarr array.  Storing variant data in Zarr seems to reduce file size by about 50% compared to BCF/VCF.  One advantage of Zarr over many of its competitors is that supports analysis of both rows (variance at a given position) and columns (individual data) well.
 ### Analysis:
 A system based on Zarr seems like it would have potential as a replacement for VCF.  One potential disadvantage is that the Zarr representation creates a complex file structure for each set of variant data that would have to be transmitted as a tarfile, Zip archive, or similar object to make moving variant data from location to location practical.  Because the Zarr format is so different from VCF, writing work-alike libraries to some of the ones that process VCF files seems like the best way to drive adoption of this format.
+
+## Pgen (PLINK)
+
+### Overview:
+Plink is a tool for Whole genome analysis on a large scale, focussing on analysing genotypic/phenotypic data. The files are stored in .pgen file format which is a 
+binary format of genetic data, allowing for compressed storage, with the SNPack style genomic compression, helping decrease filesize by 80+%. The genotypes are 
+represented as binary digits along with the allele frequencies. It also contains metadata like sample ids, marker ids,etc. It also has some support for visualization.
+
+### Analysis:
+It is similar to the bgen file format with the added feature of being compatible with Plink. The disadvantage though is that there is no focus on study design and 
+planning, generating cnv calling while using this file format. Also, Plink can only work on unphased biallelic data, while bgen is capable of working with a wider
+range of genetic data types.
+
+## VCF Local Alleles:
+
+## Overview:
+In the context of VCF local alleles, the alleles are specifically selected and localised and the analysis done is selective for the given variant locus. This can help write large datasets into less data, thereby reducing the size of vcf's generated from SNP calling for as large as >20000 samples by being specific and incorporating necessary parameters.
+
+### Analysis:
+In the HTS-lib documentation, it states that this feature is already incorporated for vcf version 4.3. So this is a feature already existing in the current vcf environment to reduce the file size for large datasets. But with the drawback of being restricted to localised alleles only instead for the variants.
