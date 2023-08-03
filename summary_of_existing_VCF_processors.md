@@ -42,4 +42,4 @@
    - GEMINI is a flexible and powerful CLI tool set that allows querying and analysis of VCF files for genetic variation data, including annotations and population frequencies.
  - [PLINK](https://www.cog-genomics.org/plink/2.0/) (GWAS)
    - PLINK 2.0 has added support for VCF files as input
-   - See notes on PGEN data format
+   - See notes on [PGEN data format](https://github.com/NCBI-Codeathons/vcf-4-population-genomics-team-park/blob/main/summary_of_alternatives.md#pgen-plink)
