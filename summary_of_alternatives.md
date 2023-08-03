@@ -63,7 +63,7 @@ There are 4 genotypes assigned for each byte, leading to faster computation and 
 ### Analysis:
 This is a very efficient format which can help compress data with the help of calculating the covaraiance matrix of the SNP, and indexing these covaraints for saving memory.
 
-## Tachylon
+## Tachyon
 ### Overview:
 Open source C++ tool for calling variant data and writing, manipulating over it. It is also used for storing the SNP data in .yon format. It can be used for fast analysis on population level genomics data. This format stores data that optimises query execution, just like .cram does for .sam/.bam files. It can be downloaded in Linux using c library htslib as prerequisite, along with openssl, zstd for compression. While compressing, we need to set the block size of no. of variants/ no. of base pairs. It also uses encryption key using AES-256 to protect sensitive information. And just like Bcftools, it can be used to read/mutate the variant data file, alongwith the annotation of the metadata file.
 
