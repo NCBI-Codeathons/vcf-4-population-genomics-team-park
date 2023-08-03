@@ -31,6 +31,10 @@ Conversion to and from new file format to BCF/VCF/gVCF
 In parallel, we will perform a high-level look through the proposed variant file formats to understand the commonality of the problems they attempt to solve, their approaches to solve them, and their assumptions about their use cases and how users interact with their data format. It is possible that we may need to refine our approach and outputs based on what we find here.
 
 ## Results
-https://github.com/NCBI-Codeathons/vcf-4-population-genomics-team-park/blob/main/summary_of_alternatives.md
+- summary of the existing tools that creating, consuming and changing VCF files:
+  - https://github.com/NCBI-Codeathons/vcf-4-population-genomics-team-park/edit/main/summary_of_existing_VCF_processors.md
+    
+- summary of alternative file formats:
+  - https://github.com/NCBI-Codeathons/vcf-4-population-genomics-team-park/blob/main/summary_of_alternatives.md
 
 ## Future Work
