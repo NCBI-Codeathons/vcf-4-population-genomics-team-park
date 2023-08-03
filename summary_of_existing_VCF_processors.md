@@ -34,8 +34,12 @@
     - Iqtree, fasttree typically start with msa fasta inputs, but can take phylip distance matrixes instead — if we produce a new-VCF to phylip conversion tool, that solves it
     - Augur wrappers on iqtree/fasttree can use VCF input instead of fasta, but use custom code to convert
     - USHER uses VCF inputs for incremental daily builds of SC2 trees (adding 10k-100k genomes at a time), but cannot use VCF for full builds (VCF cannot hold 10M columns). Custom code for reading VCF.
-    - [GEMINI](https://gemini.readthedocs.io/en/latest/)
-      - GEMINI is a flexible and powerful pipeline that allows querying and analysis of VCF files for genetic variation data, including annotations and population frequencies.
-    - [PLINK](https://www.cog-genomics.org/plink/2.0/)
-      - PLINK 2.0 has added support for VCF files as input
-      - See notes on PGEN data format
+ - Visual interactive analysis tools (VCF -> GUI)
+   - [IGV](https://software.broadinstitute.org/software/igv/)
+   - [3DVizSNP](https://analysistools.cancer.gov/3dvizsnp/about)
+   - [Geneious](https://www.geneious.com/)
+ - [GEMINI](https://gemini.readthedocs.io/en/latest/)
+   - GEMINI is a flexible and powerful CLI tool set that allows querying and analysis of VCF files for genetic variation data, including annotations and population frequencies.
+ - [PLINK](https://www.cog-genomics.org/plink/2.0/) (GWAS)
+   - PLINK 2.0 has added support for VCF files as input
+   - See notes on PGEN data format
