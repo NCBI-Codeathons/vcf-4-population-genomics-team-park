@@ -62,6 +62,15 @@ It is a scalable WGS data storage tool. It can be used to store variant data lik
 Again, like Hail, it is just a format to store the variant data, and use it for efficient downstream analysis. It is not a separate file format, although it provides the advantage of merging multiple VCF files and can be used at a population level genomic analysis.
 ### URL:
 [https://github.com/GenomicsDB/GenomicsDB](https://github.com/GenomicsDB/GenomicsDB)
+## TileDB-VCF
+### Overview:
+TileDB-VCF is an open-source Python package that offers convenience features for ingesting, querying and exporting VCF/gVCF files based on TileDB Embedded multidimensional arrays. TileDB-VCF offers full support for genomic ranges in gVCFs and can work in an N+1 compliant manner, while also calculting locus summary data such as allele count upon ingestion. Generic TileDB arrays can store variant annotation or sample level metadata and can be accessed with APIs in several popular programming languages. TileDB Cloud, a paid SaaS or on-prem database platform provides support for user-defined functions (UDFs) and task graphs to partition, query and analyze large variant stores at scale while storing this data in AWS S3 or other object stores. TileDB Cloud also provides enterprise level governance as well as a platform for hosting Jupyter notebooks and RShiny dashboards including variant browsers.
+
+### Analysis:
+TileDB-VCF with TileDB Cloud is one of the few offerings that can support real-time queries over biobank scale variant stores at web speed (~30 sec). While the open-source package enables basic querying, most of the large scale query and analysis benefits require a paid tier.
+
+### URL:
+[https://github.com/TileDB-Inc/TileDB-VCF](https://github.com/TileDB-Inc/TileDB-VCF)
 ## GDS
 ### Overview:
 This is a R/Bioconductor based tool, was mainly built to optimise large scale GWAS in R. It stores the Part of a project named CoreArray, having functions such as gdsfmt for efficient memory and file management, SNPRelate for GWAS SNP calculations on multicore systems. SNPRelate can also can be used for Plink, sequencevcf, netcdf, other data types with package to reconvert. The file is created in a .gds format. The .gds files contains genetic covariance and IBD (Identical by descent) coefficient split into non-overlapping parts and allocated to multicore system. The genome wide distribution of SNP effects attributed to allelic dosages and sample SNP eigenvectors, which helps to calculate substantial relatedness. The IBD estimation done by method of moment(mom) or maximum liklehood estimate(MLE).
